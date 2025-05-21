@@ -27,6 +27,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+      - name: Print system info
+        run: |
+          echo "===== CPU Info ====="
+          lscpu
+          echo "===== Memory Info ====="
+          free -h
+          echo "===== Disk Usage ====="
+          df -h
       - name: Run Project
         run: |
           yarn
